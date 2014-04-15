@@ -50,9 +50,9 @@ def lastate():
 def navstate():
     '''prints navigation status'''
     if beacons == True:
-        print: 'navigation: connecting to network...'
+        print 'navigation: connecting to network...'
     else:
-        print: 'navigation: ERROR! no nav-becons detected!'
+        print 'navigation: ERROR! no nav-becons detected!'
 
 def status():
     corestate()
