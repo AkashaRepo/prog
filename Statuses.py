@@ -53,10 +53,13 @@ def navstate():
         print: 'navigation: connecting to network...'
     else:
         print: 'navigation: ERROR! no nav-becons detected!'
-        
-corestate()
-torchstate()
-trustate()
-senstate()
-lastate()
-navstate()
+
+def status():
+    corestate()
+    torchstate()
+    trustate()
+    senstate()
+    lastate()
+    navstate()
+    
+status()
