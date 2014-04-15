@@ -3,6 +3,7 @@ torch = 'standby'
 sensor = 'active'
 laser = 'standby'
 truss = 100
+beacons = False
 
 def corestate():
     '''prints core status'''
@@ -19,6 +20,14 @@ def torchstate():
         print 'torch drive: standby'
     else:
         print 'torch drive: inactive'
+        
+def trustate():
+    '''prints structural integrity'''
+    if truss >= 1 and truss <= 100:
+        print 'structural truss: '+str(truss)+'% integrity'
+    elif truss < 1:
+        print 'structural truss: ERROR! STRUCTURAL FAILURE!'
+    else: print 'structural truss: ERROR! UNKNOWN ERROR'
 
 def senstate():
     '''prints sensor status'''
@@ -37,13 +46,17 @@ def lastate():
         print 'comunications laser: standby'
     else:
         print 'comunications laser: inactive'
-        
-def trustate():
-    '''prints structural integrity'''
-    print 'structural truss:'str(truss)+'% integirty'
+
+def navstate():
+    '''prints navigation status'''
+    if beacons == True:
+        print: 'navigation: connecting to network...'
+    else:
+        print: 'navigation: ERROR! no nav-becons detected!'
         
 corestate()
 torchstate()
+trustate()
 senstate()
 lastate()
-trustate()
+navsate()
