@@ -20,17 +20,9 @@
 'imput comand or type HELP at any time for a list of options.'
 
 
-#when the player returns to the deep space node, note these lines should be replaced as the status changes.
+#when the player returns to the deep space node.
 'escape burn complete'
-'checking systems'
-'...'
-'computer core: active"
-'torch drive: standby'
-'Structural Truss: 100% integrity'
-'sensor suite: active'
-'comunications laser: standby'
 'navigation: celestial'
-'...'
 'listing bodies'
 '[0] Unnamed Class G2V star'
 '[1] Unnamed Super Terestrial planet'
@@ -48,6 +40,20 @@
 'PING [target]: iluminates an object with comunications laser'
 'STATUS: lists all modules and there states'
 'HELP: displays this screen'
+'end of list'
+'...'
+'imput comand or type HELP at any time for a list of options.'
+
+
+#list of modules displayed when the player types STATUS, these lines will change as the statuses change.
+'checking systems'
+'...'
+'computer core: active'
+'torch drive: standby'
+'structural truss: 100% integrity'
+'sensor suite: active'
+'comunications laser: Standby'
+'navigation: celestial'
 'end of list'
 '...'
 'imput comand or type HELP at any time for a list of options.'
