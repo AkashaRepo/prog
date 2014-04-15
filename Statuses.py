@@ -61,5 +61,7 @@ def status():
     senstate()
     lastate()
     navstate()
-    
-status()
+
+def activate(module):
+    '''activates a module'''
+    module=
