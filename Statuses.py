@@ -23,9 +23,9 @@ def torchstate():
         
 def trustate():
     '''prints structural integrity'''
-    if truss >= 1 and truss <= 100:
+    if truss >= 1 and truss <= 100 and truss %1 == 0:
         print 'structural truss: '+str(truss)+'% integrity'
-    elif truss < 1:
+    elif truss < 1 and truss %1 == 0:
         print 'structural truss: ERROR! STRUCTURAL FAILURE!'
     else: print 'structural truss: ERROR! UNKNOWN ERROR'
 
@@ -61,7 +61,7 @@ def status():
     senstate()
     lastate()
     navstate()
-
-def activate(module):
-    '''activates a module'''
-    module=
+    
+def activate()
+    
+status()
