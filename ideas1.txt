@@ -17,6 +17,7 @@ List of locations in solar system.
 	-Hyperspace (quit)
 		-Orbiting the sun
 			-Low Solar orbit
+				-Dangerously low solar orbit
 			-Orbiting high above first planet
 				-in polar orbit around first planet
 				-in low orbit around planet
