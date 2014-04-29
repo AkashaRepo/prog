@@ -50,7 +50,7 @@ while room == 'controll':
 		print "and to the EAST and WEST the data and instruction memory rooms respectively"
 	else: print "Invalid command."
 
-while room == 'data":
+while room == 'data':
 	command = raw_input("Enter comand, you can go WEST. Type LOOK for more info.\n")
 	command = command.lower()
 	if command =='west':
