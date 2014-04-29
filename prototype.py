@@ -69,7 +69,7 @@ while room == 'instruction':
 		room = 'control'
 	elif command =='look':
 		print "The western side of the bunker is a vast arcade lined with rows and rows of instruction memmory units."
-		print "Cables snake through an archway to the EAST to the controll unit.
+		print "Cables snake through an archway to the EAST to the controll unit."
 	else: print "Invalid command."
 	
 while room == 'logic':
