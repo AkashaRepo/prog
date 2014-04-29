@@ -49,6 +49,12 @@ while room == 'controll':
 		print "in all directions, to the NORTH they lead to the ALU room, to the SOUTH is the IO room,"
 		print "and to the EAST and WEST the data and instruction memory rooms respectively"
 	else: print "Invalid command."
+
+while room == 'data":
+	
+
+while room == 'instruction':
+	
 	
 while room == 'logic':
 	command = raw_input("Enter comand, you can go SOUTH. Type LOOK for more info.\n")
@@ -61,5 +67,5 @@ while room == 'logic':
 		print "The controll unit stands in the room to the SOUTH."
 	else: print "Invalid command."
 
-while room == 'data
+
 
