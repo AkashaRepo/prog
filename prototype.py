@@ -51,10 +51,24 @@ while room == 'controll':
 	else: print "Invalid command."
 
 while room == 'data":
-	
-
+	command = raw_input("Enter comand, you can go WEST. Type LOOK for more info.\n")
+	command = command.lower()
+	if command =='west':
+		print ""
+		room = 'control'
+	elif command =='look':
+		print ""
+	else: print "Invalid command."
+		
 while room == 'instruction':
-	
+	command = raw_input("Enter comand, you can go EAST. Type LOOK for more info.\n")
+	command = command.lower()
+	if command =='east':
+		print ""
+		room = 'control'
+	elif command =='look':
+		print ""
+	else: print "Invalid command."
 	
 while room == 'logic':
 	command = raw_input("Enter comand, you can go SOUTH. Type LOOK for more info.\n")
