@@ -2,7 +2,7 @@ print "This is the elivator, type LOOK at any time for more information."
 room = 'elivator'
 
 while room == 'elivator':
-	command = raw_input("Enter comand, you can go NORTH")
+	command = raw_input("Enter comand, you can go NORTH\n")
 	
 	if command=='north':
 		print "You enter the Multivac IO room."
@@ -13,7 +13,7 @@ while room == 'elivator':
 	else: print "Invalid command."
 	
 while room == 'io':
-	command = raw_input("Enter comand, you can go NORTH or SOUTH")
+	command = raw_input("Enter comand, you can go NORTH or SOUTH\n")
 	
 	if command=='north':
 		print "You enter the Multivac controll unit room."
@@ -28,7 +28,7 @@ while room == 'io':
 	else: print "Invalid command."
 	
 while room == 'controll':
-	command = raw_input("Enter comand, you can go NORTH, SOUTH, EAST, or WEST")
+	command = raw_input("Enter comand, you can go NORTH, SOUTH, EAST, or WEST\n")
 	
 	if command=='north':
 		print "You enter the Multivac Logic unit room."
