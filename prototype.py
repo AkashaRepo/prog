@@ -54,20 +54,22 @@ while room == 'data":
 	command = raw_input("Enter comand, you can go WEST. Type LOOK for more info.\n")
 	command = command.lower()
 	if command =='west':
-		print ""
+		print "You enter the Multivac controll unit room."
 		room = 'control'
 	elif command =='look':
-		print ""
+		print "The eastern side of the bunker is a cast arcade lined with rows and rows of data memmory units."
+		print "Cables snake through an archway to the WEST to the controll unit.
 	else: print "Invalid command."
 		
 while room == 'instruction':
 	command = raw_input("Enter comand, you can go EAST. Type LOOK for more info.\n")
 	command = command.lower()
 	if command =='east':
-		print ""
+		print "You enter the Multivac controll unit room."
 		room = 'control'
 	elif command =='look':
-		print ""
+		print "The western side of the bunker is a vast arcade lined with rows and rows of instruction memmory units."
+		print "Cables snake through an archway to the EAST to the controll unit.
 	else: print "Invalid command."
 	
 while room == 'logic':
@@ -77,7 +79,7 @@ while room == 'logic':
 		print "You enter the Multivac controll unit room."
 		room = 'controll'
 	elif command =='look':
-		print "You are in Multivac's Logic room. At the far end of the room stands rows and rows of logic units."
+		print "You are in Multivac's Logic room. At the far end of the room a row of massive logic units."
 		print "The controll unit stands in the room to the SOUTH."
 	else: print "Invalid command."
 
