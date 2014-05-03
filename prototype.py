@@ -6,16 +6,17 @@ while game == True:
 	while room == 'elivator': #the player can use the following commnds in this room
 		command = raw_input("Enter comand, you can go NORTH. Type LOOK for more info.\n")
 		command = command.lower() #The above line asks the player for imput, and this line makes it lowercase for simplicty
-		if command=='north': #this command changes the room the player is in.
+		command = command[0] #This selects the first letter from the player's imput, which is handy since all of the possible comands have diffrent first letters.
+		if command=='n': #this command changes the room the player is in.
 			print "You enter the Multivac IO room."
 			room = 'io' 
-		elif command=='look': #this command displays more info but does not change the room.
+		elif command=='l': #this command displays more info but does not change the room.
 			print "You are in an old industrial elivator."
 			print "The Multiac IO room lies through a door to the NORTH."
 		else: print "Invalid command." #this displays an error message, because the room is still the same, they can enter more commands.
 	while room == 'io':
 		command = raw_input("Enter comand, you can go NORTH or SOUTH. Type LOOK for more info.\n")
-		command = command.lower()	
+		command = command.lower() #note, the rest of the rooms do not have the first letter feature and the whole word must be selected. This code could be made better with modularity	
 		if command=='north':
 			print "You enter the Multivac control unit room."
 			room = 'control'
