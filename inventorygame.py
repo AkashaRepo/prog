@@ -1,29 +1,29 @@
-*** this is a stupid game for finding out how to make inventories work
-map
-this is a room that can not be exited. on the floor are some items. all the player can do is pick up the items.
-they have a two item inventory. If they pick up two items that can be combined, the items automatically combine.
+# this is a stupid game for finding out how to make inventories work //
+# map
+# this is a room that can not be exited. on the floor are some items. all the player can do is pick up the items.
+# they have a two item inventory. If they pick up two items that can be combined, the items automatically combine.
 
-items
-pencil, paper, needle, thread, bowl, soap
+# items
+# pencil, paper, needle, thread, bowl, soap
 
-1. pencil + paper = drawing
-2. needle + thread = shirt patch
-3. bowl + soap = soap carving
-4. needle + bowl = soap sculpture
-5. soap + thread = deer scare
-6. needle + bowl = compass
-7. pencil + soap = sundial
+# 1. pencil + paper = drawing
+# 2. needle + thread = shirt patch
+# 3. bowl + soap = soap carving
+# 4. needle + bowl = soap sculpture
+# 5. soap + thread = deer scare
+# 6. needle + bowl = compass
+# 7. pencil + soap = sundial
 
-exclusions
-if soap is used to make suds then soap can no longer be used. Every other item can be used infinitely
+#  exclusions
+#  if soap is used to make suds then soap can no longer be used. Every other item can be used infinitely
 
-bonus
-suds + shirt patch = homemaker reward
-drawing + soap carving = artist reward
-compass + sundial = survivalist reward
-deer scare + compass = weirdo reward
+#  bonus
+# suds + shirt patch = homemaker reward
+#  drawing + soap carving = artist reward
+#  compass + sundial = survivalist reward
+#  deer scare + compass = weirdo reward
 
-end description ***
+#  end description
 
 pencil = 1
 paper = 2
