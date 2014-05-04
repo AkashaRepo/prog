@@ -41,9 +41,9 @@ def intro():
     print "what will you do?"
     go_forth()
     
-def go_forth():
-    prompt = ">"
-    next = raw_input(prompt)
+
+prompt = ">"
+next = raw_input(prompt)
     
 inventory = []
 if len(inventory) > 2:
@@ -52,32 +52,32 @@ if len(inventory) > 2:
 intro()
 
 while True:
-    if "bowl" == next:
+    if next == "bowl":
         print "you have picked up the bowl"
         inventory.append(bowl)
-        go_forth()
+        return next
     elif "paper" == next:
         print "you have picked up the paper"
         inventory.append(paper)
-        go_forth()
+        return next
     elif "pencil" == next:
         print "you have picked up the pencil"
         inventory.append(pencil)
-        go_forth()
+        return next
     elif "thread" == next:
         print "you have picked up the thread"
         inventory.append(thread)
-        go_forth()
+        return next
     elif "needle" == next:
         print "you have picked up the needle"
         inventory.append(needle)
-        go_forth()
+        return next
     elif "soap" == next:
         print "you have picked up the soap"
         inventory.append(soap)
-        go_forth()
+        return next
     else:
         print "I do not understand %s" % next
-        go_forth()
+        return next
     
     
