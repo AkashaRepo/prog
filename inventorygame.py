@@ -55,29 +55,29 @@ while True:
     if next == "bowl":
         print "you have picked up the bowl"
         inventory.append(bowl)
-        return next
+        next
     elif "paper" == next:
         print "you have picked up the paper"
         inventory.append(paper)
-        return next
+        next
     elif "pencil" == next:
         print "you have picked up the pencil"
         inventory.append(pencil)
-        return next
+        next
     elif "thread" == next:
         print "you have picked up the thread"
         inventory.append(thread)
-        return next
+        next
     elif "needle" == next:
         print "you have picked up the needle"
         inventory.append(needle)
-        return next
+        next
     elif "soap" == next:
         print "you have picked up the soap"
         inventory.append(soap)
-        return next
+        next
     else:
         print "I do not understand %s" % next
-        return next
+        next
     
     
