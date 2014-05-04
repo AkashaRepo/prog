@@ -48,6 +48,8 @@ def go_forth():
 inventory = []
 if len(inventory) > 2:
     del(inventory[-1:])
+    
+intro()
 
 if "bowl" == next:
     print "you have picked up the bowl"
