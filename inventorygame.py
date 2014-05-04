@@ -49,27 +49,27 @@ inventory = []
 if len(inventory) > 2:
     del(inventory[-1:])
 
-if "bowl" in next:
+if "bowl" == next:
     print "you have picked up the bowl"
     inventory.append(bowl)
     go_forth()
-elif "paper" in next:
+elif "paper" == next:
     print "you have picked up the paper"
     inventory.append(paper)
     go_forth()
-elif "pencil" in next:
+elif "pencil" == next:
     print "you have picked up the pencil"
     inventory.append(pencil)
     go_forth()
-elif "thread" in next:
+elif "thread" == next:
     print "you have picked up the thread"
     inventory.append(thread)
     go_forth()
-elif "needle" in next:
+elif "needle" == next:
     print "you have picked up the needle"
     inventory.append(needle)
     go_forth()
-elif "soap" in next:
+elif "soap" == next:
     print "you have picked up the soap"
     inventory.append(soap)
     go_forth()
