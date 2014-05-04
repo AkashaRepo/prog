@@ -51,32 +51,33 @@ if len(inventory) > 2:
     
 intro()
 
-if "bowl" == next:
-    print "you have picked up the bowl"
-    inventory.append(bowl)
-    go_forth()
-elif "paper" == next:
-    print "you have picked up the paper"
-    inventory.append(paper)
-    go_forth()
-elif "pencil" == next:
-    print "you have picked up the pencil"
-    inventory.append(pencil)
-    go_forth()
-elif "thread" == next:
-    print "you have picked up the thread"
-    inventory.append(thread)
-    go_forth()
-elif "needle" == next:
-    print "you have picked up the needle"
-    inventory.append(needle)
-    go_forth()
-elif "soap" == next:
-    print "you have picked up the soap"
-    inventory.append(soap)
-    go_forth()
-else:
-    print "I do not understand %s" % next
-    go_forth()
+while True:
+    if "bowl" == next:
+        print "you have picked up the bowl"
+        inventory.append(bowl)
+        go_forth()
+    elif "paper" == next:
+        print "you have picked up the paper"
+        inventory.append(paper)
+        go_forth()
+    elif "pencil" == next:
+        print "you have picked up the pencil"
+        inventory.append(pencil)
+        go_forth()
+    elif "thread" == next:
+        print "you have picked up the thread"
+        inventory.append(thread)
+        go_forth()
+    elif "needle" == next:
+        print "you have picked up the needle"
+        inventory.append(needle)
+        go_forth()
+    elif "soap" == next:
+        print "you have picked up the soap"
+        inventory.append(soap)
+        go_forth()
+    else:
+        print "I do not understand %s" % next
+        go_forth()
     
     
