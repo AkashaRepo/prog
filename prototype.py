@@ -3,8 +3,12 @@
 def prompt(): #this function gives the player a comand prompt
 	command = raw_input("Enter comand.\n")
 	command = command.lower() #The above line asks the player for imput, and this line makes it lowercase for simplicty
-	command = command[0] #This selects the first letter from the player's imput, which is handy since all of the possible comands have diffrent first letters.
-	return command
+	if len(command) > 0:
+		command = command[0] #This selects the first letter from the player's imput, which is handy since all of the possible comands have diffrent first letters.
+		return command
+	else:
+		command = 0
+		return command
 print "You are in an elivator, type LOOK at any time for more information." #this string is displayed at the start of the game.
 room = 'elivator' #this variable stores the player's location.
 while True:
