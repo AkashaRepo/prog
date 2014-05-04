@@ -32,6 +32,8 @@ thread = 20
 soap = 50
 bowl = 100
 
+prompt = ">"
+next = raw_input(prompt)
 
 def intro():
     print "You are in an inescapable room"
@@ -39,11 +41,8 @@ def intro():
     print "a green pencil, a bowl with a bit of water in it, a sewing needle"
     print "a piece of paper, a bar of floral smelling soap, and a spool of heavy cotton thread."
     print "what will you do?"
-    go_forth()
+    next
     
-
-prompt = ">"
-next = raw_input(prompt)
     
 inventory = []
 if len(inventory) > 2:
