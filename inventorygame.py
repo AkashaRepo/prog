@@ -68,7 +68,7 @@ while len(inventory) == 2:
         
 intro()
 
-while len(inventory) >= 2:
+while len(inventory) <= 2:
     if "bowl" == next:
         print "you have picked up the bowl"
         inventory.append(bowl)
@@ -100,10 +100,22 @@ while len(inventory) >= 2:
         prompt = ">"
         next = raw_input(prompt)
     else:
-        print "I do not understand %s" % next
-        prompt = ">"
-        next = raw_input(prompt)
+        while len(inventory) == 2:
+            if sum(inventory) == 3:
+                print "you have made a drawing"
+            elif sum(inventory) == 30:
+                print "you have made a patch on your shirt"
+            elif sum(inventory) == 150:
+                print "you have made suds"
+            elif sum(inventory) == 51:
+                print "you have made a sundial"
+            elif sum(inventory) == 60:
+                print "you have made a soap sculpture"
+            elif sum(inventory) == 110:
+                print "you have made a compass"
+            elif sum(inventory) == 70:
+                print "you have made a deer scare"
+            else:
+                print "the items you've picked up can't be combined"
+                inventory = []
     
-while True:
-    if len(inventory) > 2:
-        del(inventory[-1:])
