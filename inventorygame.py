@@ -47,7 +47,7 @@ def intro():
     
 inventory = []
 
-while True:
+while len(inventory) == 2:
     if sum(inventory) == 3:
         print "you have made a drawing"
     elif sum(inventory) == 30:
@@ -62,6 +62,10 @@ while True:
         print "you have made a compass"
     elif sum(inventory) == 70:
         print "you have made a deer scare"
+    else:
+        print "the items you've picked up can't be combined"
+        inventory = []
+        
 intro()
 
 while True:
