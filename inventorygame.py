@@ -47,7 +47,21 @@ def intro():
     
 inventory = []
 
-
+while True:
+    if sum(inventory) == 3:
+        print "you have made a drawing"
+    elif sum(inventory) == 30:
+        print "you have made a patch on your shirt"
+    elif sum(inventory) == 150:
+        print "you have made suds"
+    elif sum(inventory) == 51:
+        print "you have made a sundial"
+    elif sum(inventory) == 60:
+        print "you have made a soap sculpture"
+    elif sum(inventory) == 110:
+        print "you have made a compass"
+    elif sum(inventory) == 70:
+        print "you have made a deer scare"
 intro()
 
 while True:
