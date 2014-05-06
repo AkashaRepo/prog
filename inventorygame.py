@@ -68,7 +68,7 @@ while len(inventory) == 2:
         
 intro()
 
-while True:
+while len(inventory) >= 2:
     if "bowl" == next:
         print "you have picked up the bowl"
         inventory.append(bowl)
