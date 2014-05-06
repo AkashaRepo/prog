@@ -44,8 +44,10 @@ def intro():
     
     
 inventory = []
+prompt = ">"
 
 while len(inventory) == 2:
+    prompt
     if sum(inventory) == 3:
         print "you have made a drawing"
     elif sum(inventory) == 30:
@@ -67,40 +69,28 @@ while len(inventory) == 2:
 intro()
 
 while len(inventory) <= 2:
+    next = raw_input(prompt)
     if "bowl" == next:
         print "you have picked up the bowl"
         inventory.append(bowl)
-        prompt = ">"
-        next = raw_input(prompt)
     elif "paper" == next:
         print "you have picked up the paper"
         inventory.append(paper)
-        prompt = ">"
-        next = raw_input(prompt)
     elif "pencil" == next:
         print "you have picked up the pencil"
         inventory.append(pencil)
-        prompt = ">"
-        next = raw_input(prompt)
     elif "thread" == next:
         print "you have picked up the thread"
         inventory.append(thread)
-        prompt = ">"
-        next = raw_input(prompt)
     elif "needle" == next:
         print "you have picked up the needle"
         inventory.append(needle)
-        prompt = ">"
-        next = raw_input(prompt)
     elif "soap" == next:
         print "you have picked up the soap"
         inventory.append(soap)
-        prompt = ">"
-        next = raw_input(prompt)
     else:
         print "I don't understand %s" % next
-        prompt = '>'
-        next = raw_input(prompt)
+
 
 while len(inventory) == 2:
         if sum(inventory) == 3:
