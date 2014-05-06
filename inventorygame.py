@@ -40,8 +40,6 @@ def intro():
     print "a green pencil, a bowl with a bit of water in it, a sewing needle"
     print "a piece of paper, a bar of floral smelling soap, and a spool of heavy cotton thread."
     print "what will you do?"
-    prompt = ">"
-    next = raw_input(prompt)
     
     
     
