@@ -33,8 +33,6 @@ soap = 50
 bowl = 100
 
 
-prompt = ">"
-next = raw_input(prompt)
 
 def intro():
     print "You are in an inescapable room"
@@ -46,14 +44,14 @@ def intro():
     next = raw_input(prompt)
     
     
-inventory = []
-if len(inventory) > 2:
-    del(inventory[-1:])
     
+inventory = []
+
+
 intro()
 
 while True:
-    if "bowl" in next:
+    if "bowl" == next:
         print "you have picked up the bowl"
         inventory.append(bowl)
         prompt = ">"
@@ -88,3 +86,6 @@ while True:
         prompt = ">"
         next = raw_input(prompt)
     
+while True:
+    if len(inventory) > 2:
+        del(inventory[-1:])
