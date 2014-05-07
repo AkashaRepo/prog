@@ -134,3 +134,4 @@ while game == True:     # inside are loops that alternate depending on how many 
         if "artist" in reward and "homemaker" in reward and "survivalist" in reward and "free thinker" in reward:
             print "Great Job, you got all four rewards and won the game!"
             game = False
+            break
