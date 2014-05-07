@@ -130,7 +130,7 @@ while game == True:     # inside are loops that alternate depending on how many 
             print "we'll just get rid of them for you"
             room_inventory = []
             
-    while len(award) == 4:
-        if "artist" in award and "homemaker" in award and "survivalist" in award and "free thinker" in award:
-            print "Great Job, you got all four achievements and won the game!"
+    while len(reward) == 4:
+        if "artist" in reward and "homemaker" in reward and "survivalist" in reward and "free thinker" in reward:
+            print "Great Job, you got all four rewards and won the game!"
             game = False
