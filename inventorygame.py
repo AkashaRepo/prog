@@ -25,13 +25,15 @@
 
 #  end description
 
-
+items = ["paper", "pencil", "needle", "thread", "soap", "bowl"]
+prizes = ["Artist", "Survivalist", "Homemaker", "Free Thinker"]
 
 def intro():
     print "You are in an inescapable room"
     print "there are some items in front of you"
-    print "a green pencil, a bowl with a bit of water in it, a sewing needle"
-    print "a piece of paper, a bar of floral smelling soap, and a spool of cotton thread."
+    for x in items:
+        if x not in inventory:
+            print x
     print "what will you do?"
     
     
@@ -45,8 +47,11 @@ intro() # game begins
 
 while game == True:     # inside are loops that alternate depending on how many items are in inventory
     while len(inventory) < 2: # when the inventory is low this loop lets the player pick up new items
-        next = raw_input(prompt)
-        if "bowl" == next:
+        next = lower(raw_input(prompt))
+        if 'look' == next:
+            intro()
+            print "inventory:" inventory
+        elif "bowl" == next:
             print "You have picked up the bowl."
             inventory.append("bowl")
         elif "paper" == next:
