@@ -45,68 +45,65 @@ def intro():
     
 inventory = []
 prompt = ">"
+room_inventory = []
 
-while len(inventory) == 2:
-    prompt
-    if sum(inventory) == 3:
-        print "you have made a drawing"
-    elif sum(inventory) == 30:
-        print "you have made a patch on your shirt"
-    elif sum(inventory) == 150:
-        print "you have made suds"
-    elif sum(inventory) == 51:
-        print "you have made a sundial"
-    elif sum(inventory) == 60:
-        print "you have made a soap sculpture"
-    elif sum(inventory) == 110:
-        print "you have made a compass"
-    elif sum(inventory) == 70:
-        print "you have made a deer scare"
-    else:
-        print "the items you've picked up can't be combined"
-        inventory = []
         
 intro()
 
-while len(inventory) <= 2:
-    next = raw_input(prompt)
-    if "bowl" == next:
-        print "you have picked up the bowl"
-        inventory.append(bowl)
-    elif "paper" == next:
-        print "you have picked up the paper"
-        inventory.append(paper)
-    elif "pencil" == next:
-        print "you have picked up the pencil"
-        inventory.append(pencil)
-    elif "thread" == next:
-        print "you have picked up the thread"
-        inventory.append(thread)
-    elif "needle" == next:
-        print "you have picked up the needle"
-        inventory.append(needle)
-    elif "soap" == next:
-        print "you have picked up the soap"
-        inventory.append(soap)
-    else:
-        print "I don't understand %s" % next
+while True:
+    while len(inventory) < 2:
+        next = raw_input(prompt)
+        if "bowl" == next:
+            print "you have picked up the bowl"
+            inventory.append(bowl)
+        elif "paper" == next:
+            print "you have picked up the paper"
+            inventory.append(paper)
+        elif "pencil" == next:
+            print "you have picked up the pencil"
+            inventory.append(pencil)
+        elif "thread" == next:
+            print "you have picked up the thread"
+            inventory.append(thread)
+        elif "needle" == next:
+            print "you have picked up the needle"
+            inventory.append(needle)
+        elif "soap" == next:
+            print "you have picked up the soap"
+            inventory.append(soap)
+        else:
+            print "I don't understand %s" % next
 
-
-while len(inventory) == 2:
+  
+    while len(inventory) == 2:
         if sum(inventory) == 3:
             print "you have made a drawing"
+            inventory = []
+            room_inventory.append("drawing")
         elif sum(inventory) == 30:
             print "you have made a patch on your shirt"
+            inventory = []
+            room_inventory.append("patch")
         elif sum(inventory) == 150:
             print "you have made suds"
+            inventory = []
+            room_inventory.append("suds")
         elif sum(inventory) == 51:
             print "you have made a sundial"
+            inventory = []
+            room_inventory.append("sundial")
         elif sum(inventory) == 60:
             print "you have made a soap sculpture"
+            inventory = []
+            room_inventory.append("soap sculpture")
         elif sum(inventory) == 110:
             print "you have made a compass"
+            inventory = []
+            room_inventory.append("compass")
         elif sum(inventory) == 70:
             print "you have made a deer scare"
+            inventory = []
+            room_inventory.append("deer scare")
         else:
             print "the items you've picked up can't be combined"
             inventory = []
