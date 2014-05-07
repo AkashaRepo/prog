@@ -42,10 +42,10 @@ def look():
         if x not in inventory:
             print x
     if len(inventory) > 0:
-        print "this is your inventory"
+        print "this is your inventory:"
         print inventory
-    if len(reward) > 0
-        print "You have these rewards"
+    if len(reward) > 0:
+        print "You have these rewards:"
         print reward
     
 game = True    
