@@ -70,7 +70,7 @@ while game == True:     # inside are loops that alternate depending on how many 
   
     while len(inventory) == 2:# when the inventory is full this loop combines places new combined items in the room
         print "you have the %s and the %s in your inventory" % (inventory[0], inventory[1])
-        if "pencil" in inventory and "paper" in inventory
+        if "pencil" in inventory and "paper" in inventory:
             print "You used the pencil and paper in your inventory to make a drawing."
             print "You put the drawing on the floor and empty your inventory."
             inventory = []
