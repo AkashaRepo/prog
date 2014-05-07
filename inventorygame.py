@@ -118,7 +118,7 @@ while game == True:     # inside are loops that alternate depending on how many 
             room_inventory = []
         elif "patch" in room_inventory and "suds" in room_inventory:
             reward.append("homemaker")
-            print "Well darn my socks, you've cleaned the floor and mended your shirt,
+            print "Well darn my socks, you've cleaned the floor and mended your shirt,"
             print "and you've achieved the reward: Homemaker"
             room_inventory = []
         elif "sundial" in room_inventory and "compass" in room_inventory:
