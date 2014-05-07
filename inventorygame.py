@@ -31,7 +31,7 @@ def intro():
     print "You are in an inescapable room"
     print "there are some items in front of you"
     print "a green pencil, a bowl with a bit of water in it, a sewing needle"
-    print "a piece of paper, a bar of floral smelling soap, and a spool of heavy cotton thread."
+    print "a piece of paper, a bar of floral smelling soap, and a spool of cotton thread."
     print "what will you do?"
     
     
@@ -47,22 +47,22 @@ while game == True:     # inside are loops that alternate depending on how many 
     while len(inventory) < 2: # when the inventory is low this loop lets the player pick up new items
         next = raw_input(prompt)
         if "bowl" == next:
-            print "you have picked up the bowl, and put it in your inventory"
+            print "You have picked up the bowl."
             inventory.append("bowl")
         elif "paper" == next:
-            print "you have picked up the paper and put it into your inventory"
+            print "You have picked up the paper."
             inventory.append("paper")
         elif "pencil" == next:
-            print "you have picked up the pencil and put it in your inventory"
+            print "You have picked up the pencil."
             inventory.append("pencil")
         elif "thread" == next:
-            print "you have picked up the thread and put it in your inventory"
+            print "You have picked up the thread."
             inventory.append("thread")
         elif "needle" == next:
-            print "you have picked up the needle and put it in your inventory"
+            print "you have picked up the needle."
             inventory.append("needle")
         elif "soap" == next:
-            print "you have picked up the soap and put it in your inventory"
+            print "You have picked up the soap."
             inventory.append("soap")
         else:
             print "I don't understand %s" % next
@@ -132,8 +132,27 @@ while game == True:     # inside are loops that alternate depending on how many 
             print "We'll just get rid of them for you."
             room_inventory = []
             
+    while len(reward) == 1:
+        print "You've got one reward, maybe there are more..."
+        break
+        
+    while len(reward) == 2:
+        if reward[1] == reward[0]:
+            del(reward[1])
+        else:
+            print "You've got two rewards, maybe there are more..."
+            break
+        
+    while len(reward) == 3:
+        if reward[1] == reward[2]:
+            del(reward[2])
+        else:
+            print "You've got three rewards, getting close now..."
+            break
+            
     while len(reward) == 4:
         if "artist" in reward and "homemaker" in reward and "survivalist" in reward and "free thinker" in reward:
             print "Great Job, you got all four rewards and won the game!"
             game = False
             break
+        
