@@ -36,12 +36,12 @@ def intro():
     
     
 game = True    
-inventory = []
+inventory = [] # there can only be two items in inventory
 prompt = ">"
-room_inventory = []
-reward = []
+room_inventory = [] # there are items you make that go on the floor.
+reward = [] # there are four rewards. If you collect them all, you win!
         
-intro()
+intro() # game begins
 
 while game == True:     # inside are loops that alternate depending on how many items are in inventory
     while len(inventory) < 2: # when the inventory is low this loop lets the player pick up new items
@@ -144,14 +144,16 @@ while game == True:     # inside are loops that alternate depending on how many 
             break
         
     while len(reward) == 3:
-        if reward[1] == reward[2]:
+        if reward[1] == reward[2] or reward[0] == reward[2]:
             del(reward[2])
         else:
             print "You've got three rewards, getting close now..."
             break
             
     while len(reward) == 4:
-        if "artist" in reward and "homemaker" in reward and "survivalist" in reward and "free thinker" in reward:
+        if reward[3] == reward[2] or reward[3] == reward[1] or reward[3] == reward[0]:
+            del(reward[3])
+        else:
             print "Great Job, you got all four rewards and won the game!"
             game = False
             break
