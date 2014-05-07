@@ -29,13 +29,24 @@ items = ["paper", "pencil", "needle", "thread", "soap", "bowl"]
 prizes = ["Artist", "Survivalist", "Homemaker", "Free Thinker"]
 
 def intro():
-    print "You are in an inescapable room"
-    print "there are some items in front of you"
+    print "You are in a cell."
+    print "There is no visible way to escape."
+    print "on the floor in front of you are some items"
+    for x in items:
+        print x
+    print "what will you do?"
+
+def look():
+    print "these are the items in front of you."
     for x in items:
         if x not in inventory:
             print x
-    print "what will you do?"
-    
+    if len(inventory) > 0:
+        print "this is your inventory"
+        print inventory
+    if len(reward) > 0
+        print "You have these rewards"
+        print reward
     
 game = True    
 inventory = [] # there can only be two items in inventory
@@ -49,10 +60,7 @@ while game == True:     # inside are loops that alternate depending on how many 
     while len(inventory) < 2: # when the inventory is low this loop lets the player pick up new items
         next = raw_input(prompt)
         if 'look' == next:
-            intro()
-            if len(inventory) > 0:
-                print "inventory:"
-                print inventory
+            look()
         elif "bowl" == next:
             print "You have picked up the bowl."
             inventory.append("bowl")
@@ -119,7 +127,7 @@ while game == True:     # inside are loops that alternate depending on how many 
     
     while len(room_inventory) == 2:
         if "drawing" in room_inventory and "soap sculpture" in room_inventory:
-            reward.append("artist")
+            reward.append("Artist")
             print "Magnifique! You've made a drawing and a soap sculpture,"
             print "and achieved the reward: Artist"
             room_inventory = []
