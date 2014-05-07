@@ -136,27 +136,28 @@ while game == True:     # inside are loops that alternate depending on how many 
             print "We'll just clear the floor for you."
             room_inventory = []
             
-    while len(reward) == 1:
+    if len(reward) == 1:
         print "You've got one reward, maybe there are more..."
         break
         
-    while len(reward) == 2:
+    if len(reward) == 2:
         if reward[1] == reward[0]:
             del(reward[1])
         else:
             print "You've got two rewards, maybe there are more..."
             break
         
-    while len(reward) == 3:
+    if len(reward) == 3:
         if reward[1] == reward[2] or reward[0] == reward[2]:
             del(reward[2])
         else:
             print "You've got three rewards, getting close now..."
             break
             
-    while len(reward) == 4:
+    if len(reward) == 4:
         if reward[3] == reward[2] or reward[3] == reward[1] or reward[3] == reward[0]:
             del(reward[3])
+            print "You got the same reward more than once, we fixed that for you by deleting the extras."
         else:
             print "Great Job, you got all four rewards and won the game!"
             game = False
