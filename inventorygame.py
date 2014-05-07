@@ -42,7 +42,7 @@ def intro():
     print "what will you do?"
     
     
-    
+game = True    
 inventory = []
 prompt = ">"
 room_inventory = []
@@ -50,7 +50,7 @@ reward = []
         
 intro()
 
-while True:     # inside are two loops that alternate depending on how many items are in inventory
+while game = True:     # inside are loops that alternate depending on how many items are in inventory
     while len(inventory) < 2: # when the inventory is low this loop lets the player pick up new items
         next = raw_input(prompt)
         if "bowl" == next:
@@ -101,7 +101,7 @@ while True:     # inside are two loops that alternate depending on how many item
             inventory = []
             room_inventory.append("compass")
         elif sum(inventory) == 70:
-            print "you use the tie the soap with the string in your inventory to make a deer scare"
+            print "you tie the soap up with the thread in your inventory to make a deer scare"
             inventory = []
             room_inventory.append("deer scare")
         else:
@@ -124,7 +124,13 @@ while True:     # inside are two loops that alternate depending on how many item
         elif "deer scare" in room_inventory and "soap sculpture" in room_inventory:
             reward.append("free thinker")
             print "Eureka! You've achieved the reward: Free Thinker"
+            room_inventory = []
         else:
             print "you've made some things, but they don't lead to anything more."
             print "we'll just get rid of them for you"
             room_inventory = []
+            
+    while len(award) == 4:
+        if "artist" in award and "homemaker" in award and "survivalist" in award and "free thinker" in award:
+            print "Great Job, you got all four achievements and won the game!"
+            game = False
