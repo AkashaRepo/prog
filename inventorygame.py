@@ -120,7 +120,7 @@ while True:     # inside are two loops that alternate depending on how many item
         elif "sundial" in room_inventory and "compass" in room_inventory:
             reward.append("survivalist")
             print "You're prepared for anything! You've achieved the reward: Survivalist"
-            room inventory = []
+            room_inventory = []
         elif "deer scare" in room_inventory and "soap sculpture" in room_inventory:
             reward.append("free thinker")
             print "Eureka! You've achieved the reward: Free Thinker"
