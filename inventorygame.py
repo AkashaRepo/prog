@@ -50,7 +50,9 @@ while game == True:     # inside are loops that alternate depending on how many 
         next = lower(raw_input(prompt))
         if 'look' == next:
             intro()
-            print "inventory:" inventory
+            if len(inventory) > 0:
+                print "inventory:"
+                print inventory
         elif "bowl" == next:
             print "You have picked up the bowl."
             inventory.append("bowl")
@@ -76,7 +78,7 @@ while game == True:     # inside are loops that alternate depending on how many 
     while len(inventory) == 2:# when the inventory is full this loop combines places new combined items in the room
         print "you have the %s and the %s in your inventory" % (inventory[0], inventory[1])
         if "pencil" in inventory and "paper" in inventory:
-            print "You used the pencil and paper in your inventory to make a drawing."
+            print "You used the pencil and paper to make a drawing."
             print "You put the drawing on the floor and empty your inventory."
             inventory = []
             room_inventory.append("drawing")
@@ -86,7 +88,7 @@ while game == True:     # inside are loops that alternate depending on how many 
             inventory = []
             room_inventory.append("patch")
         elif "soap" in inventory and "bowl" in inventory:
-            print "you used the bowl and the soap in your inventory to make suds"
+            print "you used the bowl and the soap to make suds"
             print "you scrub the floor with the suds and empty your inventory."
             inventory = []
             room_inventory.append("suds")
@@ -97,17 +99,17 @@ while game == True:     # inside are loops that alternate depending on how many 
             inventory = []
             room_inventory.append("sundial")
         elif "needle" in inventory and "soap" in inventory:
-            print "You use the needle to carve the soap in your inventory into a soap sculpture."
+            print "You use the needle to carve the soap into a soap sculpture."
             print "You set the sculpture on the floor and empty your inventory."
             inventory = []
             room_inventory.append("soap sculpture")
         elif "needle" in inventory and "bowl" in inventory:
-            print "You place the needle in the bowl in your inventory to make a crude compass."
+            print "You place the needle in the bowl to make a crude compass."
             print 'You put the compass on the floor and empty your inventory.'
             inventory = []
             room_inventory.append("compass")
         elif 'soap' in inventory and "thread" in inventory:
-            print "You tie the soap up with the thread in your inventory to make a deer scare."
+            print "You tie the soap up with the thread to make a deer scare."
             print "You set the deer scare on the floor and empty your inventory."
             inventory = []
             room_inventory.append("deer scare")
