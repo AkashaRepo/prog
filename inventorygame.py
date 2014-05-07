@@ -113,23 +113,27 @@ while game == True:     # inside are loops that alternate depending on how many 
     while len(room_inventory) == 2:
         if "drawing" in room_inventory and "soap sculpture" in room_inventory:
             reward.append("artist")
-            print "Magnifique! You've achieved the reward: Artist"
+            print "Magnifique! You've made a drawing and a soap sculpture,"
+            print "and achieved the reward: Artist"
             room_inventory = []
         elif "patch" in room_inventory and "suds" in room_inventory:
             reward.append("homemaker")
-            print "Well darn my socks, you've achieved the reward: Homemaker"
+            print "Well darn my socks, you've cleaned the floor and mended your shirt,
+            print "and you've achieved the reward: Homemaker"
             room_inventory = []
         elif "sundial" in room_inventory and "compass" in room_inventory:
             reward.append("survivalist")
-            print "You're prepared for anything! You've achieved the reward: Survivalist"
+            print "You're prepared for anything! You made survival tools out of these" 
+            print "spare materials and you've achieved the reward: Survivalist"
             room_inventory = []
         elif "deer scare" in room_inventory and "soap sculpture" in room_inventory:
             reward.append("free thinker")
-            print "Eureka! You've achieved the reward: Free Thinker"
+            print "Eureka! You combined things in odd ways and"
+            print "you've achieved the reward: Free Thinker"
             room_inventory = []
         else:
             print "You've made some things, but the floor is getting quite cluttered."
-            print "We'll just get rid of them for you."
+            print "We'll just clear the floor for you."
             room_inventory = []
             
     while len(reward) == 1:
