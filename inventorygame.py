@@ -28,6 +28,10 @@
 items = ["paper", "pencil", "needle", "thread", "soap", "bowl"]
 prizes = ["Artist", "Survivalist", "Homemaker", "Free Thinker"]
 
+def shift_item(list1, list2, x):  # attempting to have move items from one list to another so that they don't 
+    list1.remove(x)
+    list2.append(x)
+
 def intro():   # this is the way the game begins. It doesn't really have to be a function but it's easier to place that way
     print "You are in a cell."
     print "There is no visible way to escape."
@@ -65,9 +69,9 @@ while game == True:     # inside are loops that alternate depending on how many 
         next = raw_input(prompt).strip().lower()
         if 'look' in next:
             look()
-        elif "bowl" in next:
+        elif "bowl" in next and "bowl" in items:
             print "You have picked up the bowl."
-            inventory.append("bowl")
+            shift_item(items, inventory, "bowl")
         elif "paper" in next:
             print "You have picked up the paper."
             inventory.append("paper")
@@ -92,6 +96,8 @@ while game == True:     # inside are loops that alternate depending on how many 
             print "You used the pencil and paper to make a drawing."
             print "You put the drawing on the floor and empty your inventory."
             inventory = []
+            items.append("pencil")
+            items.append("paper")
             room_inventory.append("drawing")
         elif "thread" in inventory and "needle" in inventory:
             print "you used the sewing needle and thread to embroider your shirt"
