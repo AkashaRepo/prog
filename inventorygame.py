@@ -44,6 +44,10 @@ def look():
     if len(inventory) > 0:
         print "this is your inventory:"
         print inventory
+    if len(room_inventory) = 1:
+        print "You have made %s" % room_inventory[0]
+    if len(room_inventory) = 2:
+        print "You have made %s and %s." % (room_inventory[0], room_inventory[1])
     if len(reward) > 0:
         print "You have these rewards:"
         print reward
