@@ -16,7 +16,7 @@
 # Boxes
 # 1. Green key opens up a locked fishtank, which contains a magic wand
 # 2. Blue key opens up a locked microwave, which contains a vial of newt's blood
-# 3. Red key opens up a safe, which contains purifying incense
+# 3. Red key opens up a safe, which contains purifying incense. The safe is in the cupboards under the sink.
 # 4. Purple key opens a locket, which contains a message: the magic word "Evanesco"
 
 # by lighting the incense (using a lit candle in the room already), drinking the newt's blood, holding the wand, and
@@ -28,9 +28,9 @@ def intro():
   print "There is counterspace and kitchen sink, and an oven."
   print "On the wall above the sink is a portrait of an ugly baby."
   print "Over the oven is a wall mounted microwave."
-  print "On the counter are salt and pepper shakers, some twist ties,"
+  print "On the counter are salt and pepper shakers, a locket,"
   print "and a ceramic vase with tulips in it."
-  print "The counter sits over drawers and storage space."
+  print "The counter sits over cupboards and storage space."
   print "The floor is old fashioned wood planks, you notice"
   print "that one floorboard is squeeky."
   print "In a corner you notice a toolbox."
@@ -51,15 +51,41 @@ def look():
 game = True
 prompt = ">"
 
-class Crowbar():
+class Crowbar(): # the crowbar
   def __init__(self, floorboard):
     self.floorboard = floorboard
   def use(self.floorboard):
     if self.floorboard == True:
-      # description of player prying up floorboard, showing them the key
+      # description of player prying up floorboard, showing them the blue key
     else:
       # error message, e.g. you can't use the crowbar that way
   
+class Green():  # the green key
+  def __init__(self, fishtank):
+    self.fishtank = fishtank
+  def use(self.fishtank):
+    if self.fishtank == True:   # if the key is used on the fishtank
+      # fish tank opens, allowing player to retrieve magic wand
+    else:
+      # error message, e.g. you can't use the green key that way.
+      
+class Blue():
+  def __init__(self, microwave):
+    self.microwave = microwave
+  def use(self.microwave):
+    if self.microwave == True:
+      # microwave opens, allowing player to retrieve the vial of newt's blood
+    else:
+      # error message, e.g. you can't use the blue key that way.
+      
+class Red():
+  def __init__(self, safe):
+    self.safe = safe
+  def use(self.safe):
+    if self.safe == True:
+      # use red key to open safe, allowing player to retrieve purifying incense
+    else:
+      # error message, e.g. you can't use the red key that way.
 
 while game == True:
   intro()
