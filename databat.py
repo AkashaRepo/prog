@@ -55,15 +55,15 @@ def prompt(): #this function gives the player a command prompt. NOTE, this funct
 		print "Invalid command."
 		command = prompt()
 
-def go(direction): 
-	#this function is supposed to be called when the player specifies a direction as a command.
-	#It is supposed to check the current room's exits
-	if #if the exit on the list of exits,
-	enter(room) #change the location to the room listed for that exit's key.
-	else: #if the exit is not avalable, it informs the player and asks for another command.
-		print "You can't go that way"
-		command = prompt()
-	return enter(room)
+#def go(direction): 
+#	#this function is supposed to be called when the player specifies a direction as a command.
+#	#It is supposed to check the current room's exits
+#	if #if the exit on the list of exits,
+#	enter(room) #change the location to the room listed for that exit's key.
+#	else: #if the exit is not avalable, it informs the player and asks for another command.
+#		print "You can't go that way"
+#		command = prompt()
+#	return enter(room)
 	
 location = elivator
 enter(elivator) #right now all this game does is put the player in the elivator, there are no commands that can be used yet
