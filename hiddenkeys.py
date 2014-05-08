@@ -50,9 +50,18 @@ def look():
   
 game = True
 prompt = ">"
+
+class Crowbar():
+  def __init__(self, floorboard):
+    self.floorboard = floorboard
+  def use(self.floorboard):
+    if self.floorboard == True:
+      # description of player prying up floorboard, showing them the key
+    else:
+      # error message, e.g. you can't use the crowbar that way
   
 
 while game == True:
   intro()
   next = raw_input(prompt)
-  
+  break
