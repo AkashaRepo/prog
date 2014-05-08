@@ -28,7 +28,7 @@
 items = ["paper", "pencil", "needle", "thread", "soap", "bowl"]
 prizes = ["Artist", "Survivalist", "Homemaker", "Free Thinker"]
 
-def intro():
+def intro():   # this is the way the game begins. It doesn't really have to be a function but it's easier to place that way
     print "You are in a cell."
     print "There is no visible way to escape."
     print "on the floor in front of you are some items"
@@ -36,7 +36,7 @@ def intro():
         print x
     print "what will you do?"
 
-def look():
+def look():   # this is the function that describes what happens when you look around.
     print "these are the items in front of you."
     for x in items:
         if x not in inventory:
@@ -88,7 +88,6 @@ while game == True:     # inside are loops that alternate depending on how many 
 
   
     while len(inventory) == 2:# when the inventory is full this loop combines places new combined items in the room
-        print "you have the %s and the %s in your inventory" % (inventory[0], inventory[1])
         if "pencil" in inventory and "paper" in inventory:
             print "You used the pencil and paper to make a drawing."
             print "You put the drawing on the floor and empty your inventory."
@@ -136,17 +135,17 @@ while game == True:     # inside are loops that alternate depending on how many 
             print "and achieved the reward: Artist"
             room_inventory = []
         elif "patch" in room_inventory and "suds" in room_inventory:
-            reward.append("homemaker")
+            reward.append("Homemaker")
             print "Well darn my socks, you've cleaned the floor and mended your shirt,"
             print "and you've achieved the reward: Homemaker"
             room_inventory = []
         elif "sundial" in room_inventory and "compass" in room_inventory:
-            reward.append("survivalist")
+            reward.append("Survivalist")
             print "You're prepared for anything! You made survival tools out of these" 
             print "spare materials and you've achieved the reward: Survivalist"
             room_inventory = []
         elif "deer scare" in room_inventory and "soap sculpture" in room_inventory:
-            reward.append("free thinker")
+            reward.append("Free Thinker")
             print "Eureka! You combined things in odd ways and"
             print "you've achieved the reward: Free Thinker"
             room_inventory = []
