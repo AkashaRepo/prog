@@ -74,61 +74,65 @@ while game == True:     # inside are loops that alternate depending on how many 
             shift_item(items, inventory, "bowl")
         elif "paper" in next:
             print "You have picked up the paper."
-            inventory.append("paper")
+            shift_item(items, inventory, "paper")
         elif "pencil" in next:
             print "You have picked up the pencil."
-            inventory.append("pencil")
+            shift_item(items, inventory, "pencil")
         elif "thread" in next:
             print "You have picked up the thread."
-            inventory.append("thread")
+            shift_item(items, inventory, "thread")
         elif "needle" in next:
             print "you have picked up the needle."
-            inventory.append("needle")
+            shift_item(items, inventory, "needle")
         elif "soap" in next:
             print "You have picked up the soap."
-            inventory.append("soap")
+            shift_item(items, inventory, "soap")
         else:
-            print "I don't understand %s" % next
+            print "You can't %s" % next
 
   
     while len(inventory) == 2:# when the inventory is full this loop combines places new combined items in the room
         if "pencil" in inventory and "paper" in inventory:
             print "You used the pencil and paper to make a drawing."
             print "You put the drawing on the floor and empty your inventory."
-            inventory = []
-            items.append("pencil")
-            items.append("paper")
+            item_shift(inventory, items, "pencil")
+            item_shift(inventory, items, "paper")
             room_inventory.append("drawing")
         elif "thread" in inventory and "needle" in inventory:
             print "you used the sewing needle and thread to embroider your shirt"
             print "you return the needle and thread to the floor"
-            inventory = []
+            item_shift(inventory, items, "thread")
+            item_shift(inventory, items, "needle")
             room_inventory.append("patch")
         elif "soap" in inventory and "bowl" in inventory:
             print "you used the bowl and the soap to make suds"
             print "you scrub the floor with the suds and empty your inventory."
-            inventory = []
+            item_shift(inventory, item, "soap")
+            item_shift(inventory, item, "bowl")
             room_inventory.append("suds")
         elif "pencil" in inventory and "soap" in inventory:
             print "You stab the pencil into the soap to make a crude sundial"
             print "You set the sundial on the floor. There's no natural light here but it's nice anyway."
             print "You empty your inventory."
-            inventory = []
+            item_shift(inventory, item, "pencil")
+            item_shift(inventory, item, "soap")
             room_inventory.append("sundial")
         elif "needle" in inventory and "soap" in inventory:
             print "You use the needle to carve the soap into a soap sculpture."
             print "You set the sculpture on the floor and empty your inventory."
-            inventory = []
+            item_shift(inventory, item, "needle")
+            item_shift(inventory, item, "soap")
             room_inventory.append("soap sculpture")
         elif "needle" in inventory and "bowl" in inventory:
             print "You place the needle in the bowl to make a crude compass."
             print 'You put the compass on the floor and empty your inventory.'
-            inventory = []
+            item_shift(inventory, item, "bowl")
+            item_shift(inventory, item, "needle")
             room_inventory.append("compass")
         elif 'soap' in inventory and "thread" in inventory:
             print "You tie the soap up with the thread to make a deer scare."
             print "You set the deer scare on the floor and empty your inventory."
-            inventory = []
+            inventory = [] # change this
             room_inventory.append("deer scare")
         else:
             print "The items you've picked up can't be combined, so you put them back on the floor."
