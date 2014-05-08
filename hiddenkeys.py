@@ -29,7 +29,7 @@ def intro():
   print "On the wall above the sink is a portrait of an ugly baby."
   print "Over the oven is a wall mounted microwave."
   print "On the counter are salt and pepper shakers, a locket,"
-  print "a fishtank, and a ceramic vase with tulips in it."
+  print "a fish tank, and a ceramic vase with tulips in it."
   print "The counter sits over cupboards and storage space."
   print "The floor is old fashioned wood planks, you notice"
   print "that one floorboard is squeeky."
@@ -41,8 +41,8 @@ def look():
   print "There is counterspace and kitchen sink, and an oven."
   print "On the wall above the sink is a portrait of an ugly baby."
   print "Over the oven is a wall mounted microwave."
-  print "On the counter are salt and pepper shakers, some twist ties,"
-  print "and a ceramic vase with tulips in it."
+  print "On the counter are salt and pepper shakers, a locket,"
+  print "a fish tank, and a ceramic vase with tulips in it."
   print "The counter sits over drawers and storage space."
   print "The floor is old fashioned wood planks, you notice"
   print "that one floorboard is squeeky."
@@ -93,6 +93,8 @@ class Purple():
   def use(self.locket):
     if self.locket == True:
       # use purple key to open locket
+    else:
+      # error message, e.g. you can't use the Purple key that way.
 
 while game == True:
   intro()
