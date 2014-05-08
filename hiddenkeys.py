@@ -29,7 +29,7 @@ def intro():
   print "On the wall above the sink is a portrait of an ugly baby."
   print "Over the oven is a wall mounted microwave."
   print "On the counter are salt and pepper shakers, a locket,"
-  print "and a ceramic vase with tulips in it."
+  print "a fishtank, and a ceramic vase with tulips in it."
   print "The counter sits over cupboards and storage space."
   print "The floor is old fashioned wood planks, you notice"
   print "that one floorboard is squeeky."
@@ -86,6 +86,13 @@ class Red():
       # use red key to open safe, allowing player to retrieve purifying incense
     else:
       # error message, e.g. you can't use the red key that way.
+      
+class Purple():
+  def __init__(self, locket):
+    self.locket = locket
+  def use(self.locket):
+    if self.locket == True:
+      # use purple key to open locket
 
 while game == True:
   intro()
