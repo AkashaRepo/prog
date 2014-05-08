@@ -33,38 +33,39 @@ instruction = {
 #usualy this command will be a direction, if that command is on that room's dictonary of exits, change the room to the one on that exit's index. Then start this process over in the new room.
 
 def enter(room): #this function is used when the player enters a room, or types look.
-	location = room
+	location = room #can I have this varriable be named room? Would room=room confuse python?
 	print room['look'] #displays the line in the look index of the room dictonary
-	command = prompt() #Runs the command prompt, fucntion, which currently does nothing
+	return prompt()
 	
 def look(room): #this function is simmilar to the enter() function, but does not change the room, just display it's text.
 	print room['look']
-	command = prompt()
+	return prompt()
+
+def quit(): #this function causes the game to crash, ending it.
+	print 'Goodbye.'
+	pass
 
 def prompt(): #this function gives the player a command prompt. NOTE, this function is legacy and should be swapped out for something better latter.
 	command = raw_input("Enter comand:\n")
 	command = command.lower() #The above line asks the player for imput, and this line makes it lowercase for simplicty
 	if command == 'look':
-		look(location)
+		return look(location)
 	elif command == 'north' or 'south' or 'east' or 'west' or 'up' or 'down':
-		go(command)
+		return go(command)
 	elif command == 'quit':
-		print "Goodbye."
-		import sys
-		exit(0)
+		return quit()
 	else:
 		print "Invalid command."
-		command = prompt()
+		return prompt()
 
-def go(direction): 
-	#this function is supposed to be called when the player specifies a direction as a command.
-	#It is supposed to check the current room's exits
-	if direction == #is on the list of exits
-	return enter(room) #change the location to the room listed for that exit's key.
+def go(direction):  #this function is supposed to be called when the player specifies a direction as a command.
+	if direction == room[exits[' ':]]:	#It is supposed to check the current room's exits
+		location = room[exits[:' ']]
+		return enter(location) #change the location to the room listed for that exit's key.
 	else: #if the exit is not avalable, it informs the player and asks for another command.
 		print "You can't go that way"
-		command = prompt()
+		return prompt()
 	
 	
-location = elivator
+location = elivator #do I have to make location seperate from room?
 enter(elivator) #right now all this game does is put the player in the elivator, there are no commands that can be used yet
