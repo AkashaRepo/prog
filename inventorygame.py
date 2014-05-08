@@ -65,22 +65,22 @@ while game == True:     # inside are loops that alternate depending on how many 
         next = raw_input(prompt).strip().lower()
         if 'look' in next:
             look()
-        elif "bowl" == next:
+        elif "bowl" in next:
             print "You have picked up the bowl."
             inventory.append("bowl")
-        elif "paper" == next:
+        elif "paper" in next:
             print "You have picked up the paper."
             inventory.append("paper")
-        elif "pencil" == next:
+        elif "pencil" in next:
             print "You have picked up the pencil."
             inventory.append("pencil")
-        elif "thread" == next:
+        elif "thread" in next:
             print "You have picked up the thread."
             inventory.append("thread")
-        elif "needle" == next:
+        elif "needle" in next:
             print "you have picked up the needle."
             inventory.append("needle")
-        elif "soap" == next:
+        elif "soap" in next:
             print "You have picked up the soap."
             inventory.append("soap")
         else:
