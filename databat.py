@@ -33,29 +33,37 @@ instruction = {
 #usualy this command will be a direction, if that command is on that room's dictonary of exits, change the room to the one on that exit's index. Then start this process over in the new room.
 
 def enter(room): #this function is used when the player enters a room, or types look.
+	location = room
 	print room['look'] #displays the line in the look index of the room dictonary
-	command = prompt() #asks the player for a command using the prompt() function
-	if command == 'n':
-		pass #check to see if there is an 'n' exit, and then go there
-	elif command == 's':
-		pass
-	elif command == 'e':
-		pass
-	elif command == 'w':
-		pass
-	elif command == 'l':
-		enter(room)
-	else:
-		pass
+	command = prompt() #Runs the command prompt, fucntion, which currently does nothing
+	
+def look(room): #this function is simmilar to the enter() function, but does not change the room, just display it's text.
+	print room['look']
+	command = prompt()
 
 def prompt(): #this function gives the player a command prompt. NOTE, this function is legacy and should be swapped out for something better latter.
-	command = raw_input("Enter comand.\n")
+	command = raw_input("Enter comand:\n")
 	command = command.lower() #The above line asks the player for imput, and this line makes it lowercase for simplicty
-	if len(command) > 0: #this makes sure the comand is at least one character long, otherwise the game crashes if people enter a blank line
-		command = command[0] #This selects the first letter from the player's imput, which is handy since all of the possible comands have diffrent first letters.
-		return command 
-	else: #if a blank line is submitted, the prompt function will replace it with a zero so as not to crash the game.
-		command = 0
-		return command
+	if command == 'look':
+		look(location)
+	elif command == 'north' or 'south' or 'east' or 'west' or 'up' or 'down':
+		go(command)
+	elif command == 'quit':
+		print "Goodbye."
+		break
+	else:
+		print "Invalid command."
+		command = prompt()
 
-enter(elivator)
+def go(direction): 
+	#this function is supposed to be called when the player specifies a direction as a command.
+	#It is supposed to check the current room's exits
+	if #if the exit on the list of exits,
+	enter(room) #change the location to the room listed for that exit's key.
+	else: #if the exit is not avalable, it informs the player and asks for another command.
+		print "You can't go that way"
+		command = prompt()
+	return enter(room)
+	
+location = elivator
+enter(elivator) #right now all this game does is put the player in the elivator, there are no commands that can be used yet
