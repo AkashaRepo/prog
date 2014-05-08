@@ -50,7 +50,6 @@ def prompt(): #this function gives the player a command prompt. NOTE, this funct
 		go(command)
 	elif command == 'quit':
 		print "Goodbye."
-		break
 	else:
 		print "Invalid command."
 		command = prompt()
