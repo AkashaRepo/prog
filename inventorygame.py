@@ -62,8 +62,8 @@ intro() # game begins
 
 while game == True:     # inside are loops that alternate depending on how many items are in inventory
     while len(inventory) < 2: # when the inventory is low this loop lets the player pick up new items
-        next = raw_input(prompt)
-        if 'look' == next:
+        next = raw_input(prompt).strip().lower()
+        if 'look' in next:
             look()
         elif "bowl" == next:
             print "You have picked up the bowl."
