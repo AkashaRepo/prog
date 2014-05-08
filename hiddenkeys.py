@@ -59,6 +59,7 @@ class Crowbar(): # the crowbar
       # description of player prying up floorboard, showing them the blue key
     else:
       # error message, e.g. you can't use the crowbar that way
+      
   
 class Green():  # the green key
   def __init__(self, fishtank):
@@ -68,6 +69,8 @@ class Green():  # the green key
       # fish tank opens, allowing player to retrieve magic wand
     else:
       # error message, e.g. you can't use the green key that way.
+      
+
       
 class Blue():
   def __init__(self, microwave):
@@ -100,3 +103,4 @@ while game == True:
   intro()
   next = raw_input(prompt)
   break
+  
