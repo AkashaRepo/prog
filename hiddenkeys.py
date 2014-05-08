@@ -48,4 +48,11 @@ def look():
   print "that one floorboard is squeeky."
   print "In a corner you notice a toolbox."
   
-intro()
+game = True
+prompt = ">"
+  
+
+while game == True:
+  intro()
+  next = raw_input(prompt)
+  
