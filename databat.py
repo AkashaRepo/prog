@@ -70,6 +70,5 @@ def go(direction):  #this function is supposed to be called when the player spec
 	else: #if the exit is not avalable, it informs the player and asks for another command.
 		print "You can't go that way"
 		return prompt()
-	
-room = elivator
+
 enter(elivator) #right now all this game does is put the player in the elivator, there are no commands that can be used yet
