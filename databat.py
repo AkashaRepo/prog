@@ -6,38 +6,42 @@
 
 elivator = {
 	'look':"You are inside a rusty old industrial elivator.",
-	'exits':{'U':'exit','N':'io'}
+	'exits':{'up':'exit','north':'io'}
 	}
 io = {
 	'look':"You are in the Input/Output room for Multivac. The floor is covered in reems of paper printouts, and hundreds of lights flash on various consoles.",
-	'exits':{'S':'Elivator','N':'Control'}
+	'exits':{'south':'Elivator','north':'Control'}
 	}
 control = {
 	'look':"You are in the heart of Multivac. The control unit towers above you. A mass of cables snake in all directions",
-	'exits':{'N':'logic','S':'io','E':'data','W':'instruction'}
+	'exits':{'north':'logic','south':'io','east':'data','west':'instruction'}
 	}
 logic = {
 	'look':"You are in Multivac's Logic room. At the far end of the room a row of massive logic units.",
-	'exits':{'S':'control'}
+	'exits':{'north':'control'}
 	}
 data = {
 	'look':"The eastern side of the bunker is a cast arcade lined with rows and rows of data memmory units.",
-	'exits':{'W':'control'},
+	'exits':{'west':'control'},
 	}
 instruction = {
 	'look':"The western side of the bunker is a vast arcade lined with rows and rows of instruction memmory units.",
-	'exits':{'E':'control'}
+	'exits':{'east':'control'}
 	}
+
+directions = ['north','south','east','west','up','down']	
 
 #while the game is running, check which room the player is in. Display that room's 'look' string then ask them for a command.
 #usualy this command will be a direction, if that command is on that room's dictonary of exits, change the room to the one on that exit's index. Then start this process over in the new room.
 
-def enter(room): #this function is used when the player enters a room, or types look.
-	location = room #can I have this varriable be named room? Would room=room confuse python?
+def enter(location): #this function is used when the player enters a room, or types look.
+	global room 
+	room = location #can I have this varriable be named room?
 	print room['look'] #displays the line in the look index of the room dictonary
 	return prompt()
 	
-def look(room): #this function is simmilar to the enter() function, but does not change the room, just display it's text.
+def look(): #this function is simmilar to the enter() function, but does not change the room, just display it's text.
+	global room
 	print room['look']
 	return prompt()
 
@@ -45,12 +49,13 @@ def quit(): #this function causes the game to crash, ending it.
 	print 'Goodbye.'
 	pass
 
-def prompt(): #this function gives the player a command prompt. NOTE, this function is legacy and should be swapped out for something better latter.
+def prompt(): #this function gives the player a command prompt.
+	global room
 	command = raw_input("Enter comand:\n")
 	command = command.lower() #The above line asks the player for imput, and this line makes it lowercase for simplicty
 	if command == 'look':
-		return look(location)
-	elif command == 'north' or 'south' or 'east' or 'west' or 'up' or 'down':
+		return look()
+	elif command in directions:
 		return go(command)
 	elif command == 'quit':
 		return quit()
@@ -59,13 +64,12 @@ def prompt(): #this function gives the player a command prompt. NOTE, this funct
 		return prompt()
 
 def go(direction):  #this function is supposed to be called when the player specifies a direction as a command.
-	if direction == room[exits[' ':]]:	#It is supposed to check the current room's exits
-		location = room[exits[:' ']]
-		return enter(location) #change the location to the room listed for that exit's key.
+	global room
+	if direction in room['exits']:	#It is supposed to check the current room's exits
+		return enter(room['exits'][direction]) #change the room to the room listed for that exit's key.
 	else: #if the exit is not avalable, it informs the player and asks for another command.
 		print "You can't go that way"
 		return prompt()
 	
-	
-location = elivator #do I have to make location seperate from room?
+room = elivator
 enter(elivator) #right now all this game does is put the player in the elivator, there are no commands that can be used yet
