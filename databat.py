@@ -29,46 +29,41 @@ instruction = {
 	'exits':{'east':'control'}
 	}
 
-directions = ['north','south','east','west','up','down']	
-
-#while the game is running, check which room the player is in. Display that room's 'look' string then ask them for a command.
-#usualy this command will be a direction, if that command is on that room's dictonary of exits, change the room to the one on that exit's index. Then start this process over in the new room.
-
-def enter(location): #this function is used when the player enters a room, or types look.
+def enter(location): #this function is used when the player enters a room, it changes the room variable to match the new room.
 	global room 
-	room = location #can I have this varriable be named room?
-	print room['look'] #displays the line in the look index of the room dictonary
-	return prompt()
+	room = location 
+	return look() #once this function is finished, the look funciton should run.
 	
-def look(): #this function is simmilar to the enter() function, but does not change the room, just display it's text.
+def look(): #this function is displayed after the player enters a room, or when they enter the look comand.
 	global room
 	print room['look']
-	return prompt()
+	return prompt() #once the text is displayed, the game asks for another command.
 
 def quit(): #this function causes the game to crash, ending it.
 	print 'Goodbye.'
-	pass
+	pass #this is the only funciton that will not eventualy loop back to prompt, thus ending the game.
 
 def prompt(): #this function gives the player a command prompt.
 	global room
-	command = raw_input("Enter comand:\n")
-	command = command.lower() #The above line asks the player for imput, and this line makes it lowercase for simplicty
-	if command == 'look':
-		return look()
-	elif command in directions:
-		return go(command)
+	command = raw_input("Enter comand:\n") #This line asks the player for imput.
+	command = command.lower()  #this line makes the imput lowercase to prevent capitalization errors
+	directions = ['north','south','east','west','up','down'] #a list of directions
+	if command in directions:
+		return go(command) #if the command is a direction, the go(direction) function will take over.
+	elif command == 'look':
+		return look() #if the command is look, the look() function will take over.
 	elif command == 'quit':
-		return quit()
+		return quit() #if the command is quit, the quit() function will take over.
 	else:
 		print "Invalid command."
-		return prompt()
+		return prompt() #if the command is not valid, the prompt()funciton will call itself and ask the player again.
 
-def go(direction):  #this function is supposed to be called when the player specifies a direction as a command.
+def go(direction): #this function is called when the player specifies a direction as a command. THE BUG IS PROBABLY HERE
 	global room
-	if direction in room['exits']:	#It is supposed to check the current room's exits
-		return enter(room['exits'][direction]) #change the room to the room listed for that exit's key.
-	else: #if the exit is not avalable, it informs the player and asks for another command.
-		print "You can't go that way"
-		return prompt()
+	if direction in room['exits']:	#Checks the list of possible exits from the room's dictonary to see if that direction is valid.
+		return enter(room['exits'][direction]) #changes the room to the room listed for that exit's key. <BUG PROBABLY IN THIS LINE
+	else: 
+		print "You can't go that way."
+		return prompt() #if the exit is unavalable, calls prompt() again to ask for another command.
 
-enter(elivator) #right now all this game does is put the player in the elivator, there are no commands that can be used yet
+enter(elivator) #This starts the game by placing the player in the elivator.
