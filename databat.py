@@ -34,14 +34,13 @@ rooms = {
 def enter(location): #this function is used when the player enters a room, it changes the room variable to match the new room.
 	global room 
 	room = location 
-	return look() #once this function is finished, the look funciton should run.
-	
-def look(): #this function is displayed after the player enters a room, or when they enter the look comand.
+	return look() #once this function is finished, the look function should run.
+
+def look(): #this function is displayed after the player enters a room, or when they use the look comand.
 	global room
 	print rooms[room]['look']
 	return prompt() #once the text is displayed, the game asks for another command.
 
-	pass
 def quit(): #this function causes the game to crash, ending it.
 	print 'Goodbye.'
 	pass #this is the only funciton that will not eventualy loop back to prompt, thus ending the game.
@@ -60,12 +59,11 @@ def prompt(): #this function gives the player a command prompt.
 	else:
 		print "Invalid command."
 		return prompt() #if the command is not valid, the prompt()funciton will call itself and ask the player again.
-
-def go(direction): #this function is called when the player specifies a direction as a command. THE BUG IS PROBABLY HERE
+		
+def go(direction): #this function is called when the player specifies a direction as a command. 
 	global room
 	if direction in rooms[room]['exits']:	#Checks the list of possible exits from the room's dictonary to see if that direction is valid.
-		return enter(rooms[room]['exits'][direction]) #changes the room to the room listed for that exit's key. <BUG PROBABLY IN THIS LINE
-	else:
+		return enter(rooms[room]['exits'][direction]) #changes the room to the room listed for that exit's key.
 		print "You can't go that way."
 		return prompt() #if the exit is unavalable, calls prompt() again to ask for another command.
 
