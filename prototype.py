@@ -73,7 +73,6 @@ while True:
 		else: print "Invalid command."
 	while room == 'logic':
 		command = raw_input("Enter comand, you can go SOUTH. Type LOOK for more info.\n")
-		command = command.lower()	
 		if command =='s':
 			print "You enter the Multivac control unit room."
 			room = 'control'
