@@ -34,6 +34,6 @@ class room(object):
 
 elevator = room(name='elevator',
 				look="You You are inside a rusty old industrial elevator.",
-				exits={'a key':'a value'},
+				exits={},
 				contents=[],
 				scripts=[])
