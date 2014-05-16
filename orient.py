@@ -32,8 +32,18 @@ class room(object):
 		assert type(self.contents) is list
 		assert type(self.scripts) is list
 
+		def enter(self):
+			global room
+			room = self
+			return look(self)
+		def look(self):
+			print self.look
+			pass
+
 elevator = room(name='elevator',
 				look="You You are inside a rusty old industrial elevator.",
-				exits={},
+				exits={'up':'outside','north':'io'} ,
 				contents=[],
 				scripts=[])
+
+elevator.look()
