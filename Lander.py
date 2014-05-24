@@ -19,7 +19,7 @@ while game == True:
 		print "velocity: %s M/S" %(velocity)
 		print "%s Fuel Units remaining" %(fuel)
 		
-		if altitude >= 0:
+		if altitude <= 0:
 			falling = False
 		else:
 			throttle = raw_input('Manual throttle, 1-10: ')
