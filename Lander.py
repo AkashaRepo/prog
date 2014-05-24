@@ -24,7 +24,7 @@ while game == on:
 			else: player = crashed
 		else:
 			throttle = raw_input('Manual throttle, 1-10: ')
-			if throttle >= 1  && throttle <= 10:
+			if throttle >= 1  and throttle <= 10:
 				velocity -= throttle
 			else:
 				throttle = 0 
