@@ -19,18 +19,18 @@ while game == True:
 		print "velocity: %s M/S" %(velocity)
 		print "%s Fuel Units remaining" %(fuel)
 		
-		if altitude <= 0:
+		if altitude <= 0.0 :
 			falling = False
 		else:
-			throttle = raw_input('Manual throttle, 1-10: ')
+			throttle = int(raw_input('Manual throttle, 1-10: '))
 			if throttle >= 1  and throttle <= 10:
 				velocity -= throttle
 			else:
 				print "ERROR! Throttle accepts numeric values between 1 and 10"
-				throttle = 0
+				throttle = 0.0
 
 	if falling == False:
-		if velocity <= 5:
+		if velocity <= 5.0 :
 			print "you impact the lunar surface at %s M/S and Die." %(velocity)
 			game = False
 		else:
