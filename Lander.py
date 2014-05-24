@@ -24,9 +24,11 @@ while game == on:
 			else: player = crashed
 		else:
 			throttle = raw_input('Manual throttle, 1-10: ')
-			if throttle >= 1 and <= 10:
+			if throttle >= 1  && throttle <= 10:
 				velocity -= throttle
-			else: print "ERROR! Throttle accepts numeric values between 1 and 10"
+			else:
+				throttle = 0 
+				print "ERROR! Throttle accepts numeric values between 1 and 10"
 	while player == crashed:
 		print "you impact the lunar surface at " velocity "M/S and Die."
 		game = over
