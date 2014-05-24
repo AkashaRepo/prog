@@ -15,9 +15,10 @@ while game == 'on':
 	while player == 'falling':
 		velocity += gravity
 		altitude -= velocity
-		print velocity
-		print fuel
-		print altitude
+		print "altitude: %s Meters" %(altitude)
+		print "velocity: %s M/S" %(velocity)
+		print "%s Fuel Units remaining" %(fuel)
+		
 		if altitude >= 0:
 			if velocity <= 5:
 				player = 'landed'
@@ -29,11 +30,11 @@ while game == 'on':
 			else:
 				throttle = 0
 				print "ERROR! Throttle accepts numeric values between 1 and 10"
-	while player == 'crashed':
-		print "you impact the lunar surface at %S M/S and Die." (velocity)
+	if player == 'crashed':
+		print "you impact the lunar surface at %s M/S and Die." %(velocity)
 		game = 'over'
-	while player == "landed":
-		print "you touch down at %S M/S with  %S Units of fuel remaining." (velocity, fuel)
+	if player == "landed":
+		print "you touch down at %s M/S with  %s Units of fuel remaining." %(velocity, fuel)
 		if fuel <= 100:
 			print "Unfortunately you do not have enough fuel to return to orbit."
 			print "You will be the first man to die on the Moon."
