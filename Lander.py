@@ -21,7 +21,7 @@ while game == 'on':
 		if altitude == 0:
 			if velocity <= 5:
 				player = 'landed'
-			else: player = ;
+			else: player = 'crashed'
 		else:
 			throttle = raw_input('Manual throttle, 1-10: ')
 			if throttle >= 1  and throttle <= 10:
