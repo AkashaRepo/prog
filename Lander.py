@@ -30,10 +30,10 @@ while game == on:
 				throttle = 0 
 				print "ERROR! Throttle accepts numeric values between 1 and 10"
 	while player == crashed:
-		print "you impact the lunar surface at " velocity "M/S and Die."
+		print "you impact the lunar surface at "+velocity+"M/S and Die."
 		game = over
 	while player == landed:
-		print "you touch down at " velocity "M/S with " fuel "Units of fuel remaining."
+		print "you touch down at "+velocity+"M/S with "+fuel+"Units of fuel remaining."
 		if fuel <= 100:
 			print "Unfortunately you do not have enough fuel to return to orbit."
 			print "You will be the first man to die on the Moon."
