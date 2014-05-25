@@ -5,7 +5,7 @@ gravity = 1.62449 #The gravity of the moon.
 altitude = 100 #The player's starting altitude.
 velocity = 0 #The player's starting velocity
 fuel = 40 #The player's starting fuel
-bingo = 20 #Half of the total fuel, used for score purposes.
+bingo = fuel/2
 print "Retro-burn complete, prepare for landing"
 print "ERROR! autopilot failure!"
 print "Switching to Manual Throttle"
@@ -51,10 +51,10 @@ while game == True:
 			print "you touch down at %s M/S with  %s Units of fuel remaining." %(velocity, fuel)
 			if fuel <= bingo:
 				print "Unfortunately you do not have enough fuel to return to orbit."
-				print "You will be the first man to die on the Moon."
+				print "You will be the first person to die on the Moon."
 				game = False
 			else: 
-				print "Congratulations, you are the first man to walk on the Moon."
+				print "Congratulations, you are the first person to walk on the Moon."
 				game = False
 if game == False:
 	print "GAME OVER."
