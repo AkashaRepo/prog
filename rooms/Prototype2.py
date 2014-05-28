@@ -23,15 +23,12 @@ rooms = { #this dictionary is a database of the game's environment.
 		'look':"The western side of the bunker is a vast arcade lined with rows and rows of instruction memory units.",
 		'exits':{'east':'control'}}}  #Ideally this dictionary and the rest of the code should be their own files and accessed remotely.
 def enter(location): #this function is used when the player enters a room, it changes the room variable to match the new room.
-	global room 
 	room = location 
-	return look()
-def look(): #this function displays a room's look string after the player enters a room, or when they use the look command.
-	global room
+	return look(room)
+def look(room): #this function displays a room's look string after the player enters a room, or when they use the look command.
 	print rooms[room]['look']
 	return prompt()
-def prompt(): #this function gives the player a command prompt.
-	global room
+def prompt(): #this function gives the player a command prompt
 	command = raw_input("Enter command: ")
 	command = command.lower()  #this line makes the input lowercase to prevent capitalization errors
 	directions = ['north','south','east','west','up','down'] #a list of cardinal directions
@@ -44,8 +41,7 @@ def prompt(): #this function gives the player a command prompt.
 	else:
 		print "Invalid command."
 		return prompt()
-def go(direction): #this function is called when the player specifies a direction as a command. 
-	global room
+def go(direction,room): #this function is called when the player specifies a direction as a command.
 	if direction in rooms[room]['exits']: #Checks the list of possible exits from the room's dictionary to see if that direction is valid.
 		return enter(rooms[room]['exits'][direction]) #changes the room to the room listed for that exit's key.
 	else:
