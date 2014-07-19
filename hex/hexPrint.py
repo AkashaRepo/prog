@@ -1,20 +1,28 @@
 #This program prints a hex grid of arbitrary size.
-def promptX():
+def promptX(): #Prompts the user for an X dimension.
 	x = raw_input('Enter X dimension: ')
 	try:
 		x= int(x)
 	except:
 		print "Invalid dimension"
 		return promptX()
+	if x < 1:
+		print "Invalid dimension"
+		return promptX()
 	x = x+1
 	return x
-def promptY():
+
+def promptY():#Prompts the user for a Y dimension.
 	y = raw_input('Enter Y dimension: ')
 	try:
 		y= int(y)
 	except:
 		print "Invalid dimension"
 		return promptY()
+	if y < 1:
+		print "Invalid dimension"
+		return promptY()
+
 	y = y-1
 	return y
 x = promptX()
