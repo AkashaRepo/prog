@@ -1,24 +1,22 @@
-#this is a proof of concept game in which a character can walk around a set of rooms and look at things.
-
-def prompt(): #this function gives the player a comand prompt
-	command = raw_input("Enter comand.\n")
-	command = command.lower() #The above line asks the player for imput, and this line makes it lowercase for simplicty
-	if len(command) > 0: #this makes sure the comand is at least one character long, otherwise the game crashes if people enter a blank line
-		command = command[0] #This selects the first letter from the player's imput, which is handy since all of the possible comands have diffrent first letters.
+def prompt(): #this function gives the player a command prompt
+	command = raw_input("Enter command.\n")
+	command = command.lower() #The above line asks the player for input, and this line makes it lowercase for simplicity
+	if len(command) > 0: #this makes sure the command is at least one character long, otherwise the game crashes if people enter a blank line
+		command = command[0] #This selects the first letter from the player's input, which is handy since all of the possible commands have different first letters.
 		return command 
 	else: #if a blank line is submitted, the prompt function will replace it with a zero so as not to crash the game.
 		command = 0
 		return command
-print "You are in an elivator, type LOOK at any time for more information." #this string is displayed at the start of the game.
-room = 'elivator' #this variable stores the player's location.
+print "You are in an elevator, type LOOK at any time for more information." #this string is displayed at the start of the game.
+room = 'elevator' #this variable stores the player's location.
 while True:
-	while room == 'elivator': #the player can use the following commnds in this room
+	while room == 'elevator': #the player can use the following commands in this room
 		command = prompt()
 		if command=='n': #this command changes the room the player is in.
 			print "You enter the Multivac IO room."
 			room = 'io' 
 		elif command=='l': #this command displays more info but does not change the room.
-			print "You are in an old industrial elivator."
+			print "You are in an old industrial elevator."
 			print "The Multiac IO room lies through a door to the NORTH."
 		else: print "Invalid command." #this displays an error message, because the room is still the same, they can enter more commands.
 	while room == 'io':
@@ -27,12 +25,12 @@ while True:
 			print "You enter the Multivac control unit room."
 			room = 'control'
 		elif command=='s':
-			print "You enter the elivator."
-			room = 'elivator'
+			print "You enter the elevator."
+			room = 'elevator'
 		elif command=='l':
 			print "You are in the Input/output room for Multivac."
-			print "The floor is covered in reems of paper printouts, and hundreds of lights flash on various consoles."
-			print "The control unit lies to the NORTH, an elivator lies to the SOUTH."
+			print "The floor is covered in reams of paper printouts, and hundreds of lights flash on various consoles."
+			print "The control unit lies to the NORTH, an elevator lies to the SOUTH."
 		else: print "Invalid command."	
 	while room == 'control':
 		command = prompt()
@@ -72,7 +70,7 @@ while True:
 			print "Cables snake through an archway to the EAST to the control unit."
 		else: print "Invalid command."
 	while room == 'logic':
-		command = raw_input("Enter comand, you can go SOUTH. Type LOOK for more info.\n")
+		command = raw_input("Enter command, you can go SOUTH. Type LOOK for more info.\n")
 		if command =='s':
 			print "You enter the Multivac control unit room."
 			room = 'control'

@@ -1,12 +1,9 @@
-#this is my attempt at cloning the classic lunar lander game in text.
 from time import sleep
-
 gravity = 1.62449 #Meters per second per second, The gravity of the moon.
 altitude = 100 #Meters.
 velocity = 0 #Meters per second.
 fuel = 40 #The player's starting fuel.
 bingo = fuel/2 #Half the player's starting fuel, required to return to orbit.
-
 sleep(.5)
 print "\nRetro-burn complete, prepare for landing"
 sleep(.5)
@@ -16,7 +13,6 @@ print "Switching to Manual Throttle"
 sleep(.5)
 falling = True
 game = True
-
 while game == True:
 	while falling == True: #these things happen each time the game loops around, until altitude reaches zero.
 		velocity += gravity
@@ -47,7 +43,6 @@ while game == True:
 						throttle = fuel
 					fuel -= throttle
 					velocity -= throttle
-
 	if falling == False: #These things happen once the player touches the ground
 		if velocity >= 5.0 :
 			print "\nyou impact the lunar surface at %s M/S and Die." %(velocity)
