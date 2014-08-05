@@ -1,3 +1,3 @@
-PythonTextGameThing
-===================
-This is Nat's software project.
+Python things
+=============
+This is Nat's repo for python projects.
