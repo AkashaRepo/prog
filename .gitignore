@@ -1,3 +1,4 @@
 #tells git to ignore automaticly created emacs backups
 *~
 *#
+.#*
