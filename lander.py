@@ -47,6 +47,13 @@ while game == True:
 		if velocity >= 5.0 :
 			print "\nyou impact the lunar surface at %s M/S and Die." %(velocity)
 			game = False
+                elif velocity >= 10.0:
+                        print "\nyou impact the lunar surface at %s M/S" %(velocity)
+                        sleep(.5)
+                        print "Your lander is criticly damaged in the crash. You cannot return to orbit."
+                        sleep(.5)
+                        print "you will be the first person to die on the Moon."
+                        game = False
 		else:
 			print "\nyou touch down at %s M/S with  %s Units of fuel remaining." %(velocity, fuel)
 			if fuel <= bingo:
